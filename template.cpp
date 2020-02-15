@@ -1,5 +1,4 @@
 #include <bits/stdc++.h>
-
 using namespace std;
 
 #define rep(i, a, b) for(int i = a; i < (b); ++i)
@@ -16,6 +15,11 @@ template<class T> ostream& operator<<(ostream &os, set<T> S){os << "{ "; for(aut
 template<class L, class R> ostream& operator<<(ostream &os, pair<L,R> P) {return os << "(" << P.first << "," << P.second << ")";}
 template<class L, class R> ostream& operator<<(ostream &os, map<L,R> M) {os << "{ "; for(auto m:M) os<<"("<<m.first<<":"<<m.second<<") "; return os<<"}";}
 
+//#include <ext/pb_ds/assoc_container.hpp>
+//#include <ext/pb_ds/tree_policy.hpp> 
+//using namespace __gnu_pbds;
+//using ordered_set = tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update>; 
+ 
 #ifdef np
 #define trace(...) cout<<"Line:"<<__LINE__<<" "; __f(#__VA_ARGS__, __VA_ARGS__)
 template<typename Arg1>void __f(const char *name, Arg1 &&arg1) { cout<<name<<" : "<<arg1<<endl;}
@@ -33,7 +37,7 @@ int main() {
     cin.sync_with_stdio(0); cin.tie(0);
     cin.exceptions(cin.failbit);
 
-
+   
     
     
 
