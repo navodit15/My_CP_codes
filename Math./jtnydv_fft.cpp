@@ -1,3 +1,4 @@
+//
 struct base{
     ld x,y;
     base(){x=y=0;}
