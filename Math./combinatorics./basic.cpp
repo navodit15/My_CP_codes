@@ -8,6 +8,8 @@ using namespace std;
 #define rall(x) (x).rbegin(), (x).rend()
 #define sz(x) (int)(x).size()
 #define pb push_back
+#define fst first
+#define snd second
 typedef long long ll;typedef pair<int, int> pii;typedef vector<int> vi;
 template<typename T> T gcd(T a, T b){return(b?__gcd(a,b):a);}
 template<typename T> T lcm(T a, T b){return(a*(b/gcd(a,b)));}
