@@ -7,6 +7,8 @@ using namespace std;
 #define rall(x) (x).rbegin(), (x).rend()
 #define sz(x) (int)(x).size()
 #define pb push_back
+#define fst first
+#define snd second
 typedef long long ll;typedef pair<int, int> pii;typedef vector<int> vi;
 template<typename T> T gcd(T a, T b){return(b?__gcd(a,b):a);}
 template<typename T> T lcm(T a, T b){return(a*(b/gcd(a,b)));}
@@ -36,10 +38,9 @@ template<typename Arg1, typename ... Args>void __f(const char *names, Arg1 &&arg
 int main() {
     cin.sync_with_stdio(0); cin.tie(0);
     cin.exceptions(cin.failbit);
-
-   
-    
-    
+	
+	
+ 
 
 #ifdef np
     cerr <<endl<<endl<< "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " s.\n";
