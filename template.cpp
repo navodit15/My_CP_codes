@@ -17,24 +17,20 @@ template<class T> ostream& operator<<(ostream &os, set<T> S){os << "{ "; for(aut
 template<class L, class R> ostream& operator<<(ostream &os, pair<L,R> P) {return os << "(" << P.first << "," << P.second << ")";}
 template<class L, class R> ostream& operator<<(ostream &os, map<L,R> M) {os << "{ "; for(auto m:M) os<<"("<<m.first<<":"<<m.second<<") "; return os<<"}";}
 namespace fio{
-	template <typename T> void scan(T &x) { x = 0; int f = 1;char c = getchar_unlocked();
-		for (; !isdigit(c); c = getchar_unlocked()) if (c == '-') f = -f;
-		for (; isdigit(c); c = getchar_unlocked()) x = x * 10 + c - '0';
-		x *= f;
-	}
+	template <typename T> void scan(T &x) { cin >> x ;}
 	template<class T> void scan(vector<T>& a);
 	template<class T> void scan(vector<T>& a) { rep(i,0,sz(a)) scan(a[i]); }
 	template<class T, class... Ts> void scan(T& t, Ts&... ts) { scan(t); scan(ts...);}
-	template <typename T> void print(T x) { if (x < 0){ x = -x; putchar('-');}if (x > 9) {print(x / 10);}putchar(x % 10 + '0');}
+	template <typename T> void print(T x) { cout << x ;}
 	template <typename T> void println(T x) { print(x);puts("");}
-	template<class T, class... Ts> void print(const T& t, const Ts&... ts) { print(t); print(ts...); }
-}
+	template<class T, class... Ts> void println(const T& t, const Ts&... ts) { println(t); println(ts...); }
+} 
 using namespace fio; 
 
 //#include <ext/pb_ds/assoc_container.hpp>
 //#include <ext/pb_ds/tree_policy.hpp> 
 //using namespace __gnu_pbds;
-//using ordered_set = tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update>; 
+//using ordered_set = tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update>;  
  
 #ifdef np
 #define trace(...) cout<<"Line:"<<__LINE__<<" "; __f(#__VA_ARGS__, __VA_ARGS__)
@@ -54,7 +50,6 @@ template<typename Arg1, typename ... Args>void __f(const char *names, Arg1 &&arg
 int main() {
     cin.sync_with_stdio(0); cin.tie(0);
     cin.exceptions(cin.failbit);
-	
 	
 
 #ifdef np
