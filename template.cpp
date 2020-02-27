@@ -17,17 +17,17 @@ template<class T> ostream& operator<<(ostream &os, set<T> S){os << "{ "; for(aut
 template<class L, class R> ostream& operator<<(ostream &os, pair<L,R> P) {return os << "(" << P.first << "," << P.second << ")";}
 template<class L, class R> ostream& operator<<(ostream &os, map<L,R> M) {os << "{ "; for(auto m:M) os<<"("<<m.first<<":"<<m.second<<") "; return os<<"}";}
 namespace fio{
-	template <typename T> void read(T &x) { x = 0; int f = 1;char c = getchar_unlocked();
+	template <typename T> void scan(T &x) { x = 0; int f = 1;char c = getchar_unlocked();
 		for (; !isdigit(c); c = getchar_unlocked()) if (c == '-') f = -f;
 		for (; isdigit(c); c = getchar_unlocked()) x = x * 10 + c - '0';
 		x *= f;
 	}
-	template<class T> void read(vector<T>& a);
-	template<class T> void read(vector<T>& a) { rep(i,0,sz(a)) read(a[i]); }
-	template<class T, class... Ts> void read(T& t, Ts&... ts) { read(t); read(ts...);}
-	template <typename T> void write(T x) { if (x < 0){ x = -x; putchar('-');}if (x > 9) {write(x / 10);}putchar(x % 10 + '0');}
-	template <typename T> void writeln(T x) { write(x);puts("");}
-	template<class T, class... Ts> void write(const T& t, const Ts&... ts) { write(t); write(ts...); }
+	template<class T> void scan(vector<T>& a);
+	template<class T> void scan(vector<T>& a) { rep(i,0,sz(a)) scan(a[i]); }
+	template<class T, class... Ts> void scan(T& t, Ts&... ts) { scan(t); scan(ts...);}
+	template <typename T> void print(T x) { if (x < 0){ x = -x; putchar('-');}if (x > 9) {print(x / 10);}putchar(x % 10 + '0');}
+	template <typename T> void println(T x) { print(x);puts("");}
+	template<class T, class... Ts> void print(const T& t, const Ts&... ts) { print(t); print(ts...); }
 }
 using namespace fio; 
 
