@@ -21,9 +21,8 @@ namespace fio{
 	template<class T> void scan(vector<T>& a);
 	template<class T> void scan(vector<T>& a) { rep(i,0,sz(a)) scan(a[i]); }
 	template<class T, class... Ts> void scan(T& t, Ts&... ts) { scan(t); scan(ts...);}
-	template <typename T> void print(T x) { cout << x ;}
-	template <typename T> void println(T x) { print(x);puts("");}
-	template<class T, class... Ts> void println(const T& t, const Ts&... ts) { println(t); println(ts...); }
+	template <typename T> void print(T x) { cout << x << endl;}
+	template<class T, class... Ts> void print(const T& t, const Ts&... ts) { print(t); print(ts...); }
 } 
 using namespace fio; 
 
@@ -45,12 +44,11 @@ template<typename Arg1, typename ... Args>void __f(const char *names, Arg1 &&arg
 #endif
 
 
-
-
-int main() {
+signed main() {
     cin.sync_with_stdio(0); cin.tie(0);
     cin.exceptions(cin.failbit);
-	
+
+
 
 #ifdef np
     cerr <<endl<<endl<< "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " s.\n";
