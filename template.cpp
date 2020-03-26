@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#define fr(i,a,b) for(int i = a ; i <= b ; ++i);
+#define fr(i,a,b) for(int i = a ; i <= b ; ++i)
 #define rep(i, a, b) for(int i = a; i < (b); ++i)
 #define trav(a, x) for(auto& a : x)
 #define all(x) begin(x), end(x)
