@@ -125,3 +125,8 @@ bool PointOnPolygon(const vector<PT> &p, PT q) {
     return false;
 }
  
+// position of point P wrt line a----b 
+double Pos_wrt_line(PT a , PT b , PT p){
+	ld res = ((p.x-a.x)*(b.y-a.y))-((p.y-a.y)*(b.x-a.x));
+	return res;
+}
