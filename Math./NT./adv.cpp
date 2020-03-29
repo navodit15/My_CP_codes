@@ -76,7 +76,7 @@ template<typename Arg1, typename ... Args>void __f(const char *names, Arg1 &&arg
     //};
 //}
 const int maxn = 1e7+1;
-int factor[maxn],mu[maxn],eulerphi[maxn],primechk[maxn];
+int factor[maxn],mu[maxn],phi[maxn];
 vi divs[maxn];
 void Mu(){
 	memset(factor,0,sizeof factor);
@@ -103,26 +103,11 @@ void Mu(){
 			for(int j = i;j<maxn;j+=i)
 				divs[j].pb(i);
 }
-void prepare_phi(){
-    int i, j;
-    eulerphi[1]=1;
-    for(i=2 ; i<=122000 ; i++)
-    {
-        eulerphi[i]=i;
-        primechk[i]=1;
-    }
-    for(i=2 ; i<=122000 ; i++)
-    {
-        if(primechk[i]==1)
-        {
-            eulerphi[i]-=eulerphi[i]/i;
-            for(j=2 ; i*j<=122000 ; j++)
-            {
-                primechk[i*j]=0;
-                eulerphi[i*j]-=eulerphi[i*j]/i;
-            }
-        }
-    }
+void ETF(){ // 0.4s for nax = 1e7+5
+	for(int i = 0; i < maxn; ++i) phi[i] = i;
+	for(int i = 2; i < maxn; ++i) if(phi[i] == i)
+	for(int j = i; j < maxn; j += i)
+		phi[j] = phi[j] / i * (i - 1);
 }
 
 #define mp make_pair
