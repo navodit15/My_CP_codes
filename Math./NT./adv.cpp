@@ -76,22 +76,22 @@ template<typename Arg1, typename ... Args>void __f(const char *names, Arg1 &&arg
     //};
 //}
 const int maxn = 1e7+1;
-int factor[maxn],mu[maxn],phi[maxn];
+int factors[maxn],mu[maxn],phi[maxn];
 vi divs[maxn];
 void Mu(){
-	memset(factor,0,sizeof factor);
+	memset(factors,0,sizeof factors);
 	for(int i = 2;i*i<maxn;i++)
 		if(!factor[i])
 			for(int j = i*i;j<maxn;j+=i)
-				factor[j] = i;
+				factors[j] = i;
 	mu[1] = 1;
 	for(int i = 2;i<maxn;i++)
 	{
 		int p;
-		if(!factor[i])
+		if(!factors[i])
 			p = i;
 		else
-			p = factor[i];
+			p = factors[i];
 		int j = i/p;
 		if(j%p == 0)
 			mu[i] = 0;
