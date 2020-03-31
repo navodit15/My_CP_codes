@@ -69,7 +69,7 @@ namespace point{
     ld dot(PT p, PT q)     { return p.fst*q.fst+p.snd*q.snd; }
     ld dist2(PT p, PT q)   { return dot(p-q,p-q); }
     
-    ostream &operator<<(ostream &os, const PT &p) {os << "(" << p.fst << "," << p.snd << ")";}
+    ostream &operator<<(ostream &os, const PT &p) {return os << "(" << p.fst << "," << p.snd << ")";}
 }
  
 using namespace point ;
