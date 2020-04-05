@@ -81,7 +81,7 @@ vi divs[maxn];
 void Mu(){
 	memset(factors,0,sizeof factors);
 	for(int i = 2;i*i<maxn;i++)
-		if(!factor[i])
+		if(!factors[i])
 			for(int j = i*i;j<maxn;j+=i)
 				factors[j] = i;
 	mu[1] = 1;
