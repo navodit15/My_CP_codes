@@ -17,15 +17,6 @@ template<class T> ostream& operator<<(ostream &os, vector<T> V) {os << "[ "; for
 template<class T> ostream& operator<<(ostream &os, set<T> S){os << "{ "; for(auto s:S) os<<s<<" "; return os<<"}";}
 template<class L, class R> ostream& operator<<(ostream &os, pair<L,R> P) {return os << "(" << P.first << "," << P.second << ")";}
 template<class L, class R> ostream& operator<<(ostream &os, map<L,R> M) {os << "{ "; for(auto m:M) os<<"("<<m.first<<":"<<m.second<<") "; return os<<"}";}
-namespace fio{
-	template <typename T> void scan(T &x) { cin >> x ;}
-	template<class T> void scan(vector<T>& a);
-	template<class T> void scan(vector<T>& a) { rep(i,0,sz(a)) scan(a[i]); }
-	template<class T, class... Ts> void scan(T& t, Ts&... ts) { scan(t); scan(ts...);}
-	template <typename T> void print(T x) { cout << x << endl;}
-	template<class T, class... Ts> void print(const T& t, const Ts&... ts) { print(t); print(ts...); }
-} 
-using namespace fio; 
 
 //#include <ext/pb_ds/assoc_container.hpp>
 //#include <ext/pb_ds/tree_policy.hpp> 
