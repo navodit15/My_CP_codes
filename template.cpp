@@ -10,6 +10,10 @@ using namespace std;
 #define pb push_back
 #define fst first
 #define snd second
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp> 
+using namespace __gnu_pbds;
+using ordered_set = tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update>;  
 template<typename T> T gcd(T a, T b){return(b?__gcd(a,b):a);}
 template<typename T> T lcm(T a, T b){return(a*(b/gcd(a,b)));}
 typedef long long ll;typedef pair<int, int> pii;typedef vector<int> vi;typedef long double ld;
@@ -17,12 +21,7 @@ template<class T> ostream& operator<<(ostream &os, vector<T> V) {os << "[ "; for
 template<class T> ostream& operator<<(ostream &os, set<T> S){os << "{ "; for(auto s:S) os<<s<<" "; return os<<"}";}
 template<class L, class R> ostream& operator<<(ostream &os, pair<L,R> P) {return os << "(" << P.first << "," << P.second << ")";}
 template<class L, class R> ostream& operator<<(ostream &os, map<L,R> M) {os << "{ "; for(auto m:M) os<<"("<<m.first<<":"<<m.second<<") "; return os<<"}";}
-
-//#include <ext/pb_ds/assoc_container.hpp>
-//#include <ext/pb_ds/tree_policy.hpp> 
-//using namespace __gnu_pbds;
-//using ordered_set = tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update>;  
- 
+   
 #ifdef np
 #define trace(...) cout<<"Line:"<<__LINE__<<" "; __f(#__VA_ARGS__, __VA_ARGS__)
 template<typename Arg1>void __f(const char *name, Arg1 &&arg1) { cout<<name<<" : "<<arg1<<endl;}
@@ -36,15 +35,25 @@ template<typename Arg1, typename ... Args>void __f(const char *names, Arg1 &&arg
 #endif
 
 
+
+void solve(){
+
+}
+
+
 signed main() {
     cin.sync_with_stdio(0); cin.tie(0);
     cin.exceptions(cin.failbit);
+	
+
+	int tt =1 ;
+	// cin >> tt;
+	rep(i,0,tt) solve();
 
 
-	
-	
-	
-	
+
+
+
 
 #ifdef np
     cerr <<endl<<endl<< "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " s.\n";
