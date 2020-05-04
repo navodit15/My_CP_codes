@@ -24,15 +24,7 @@ template<class T> ostream& operator<<(ostream &os, vector<T> V) {os << "[ "; for
 template<class T> ostream& operator<<(ostream &os, set<T> S){os << "{ "; for(auto s:S) os<<s<<" "; return os<<"}";}
 template<class L, class R> ostream& operator<<(ostream &os, pair<L,R> P) {return os << "(" << P.first << "," << P.second << ")";}
 template<class L, class R> ostream& operator<<(ostream &os, map<L,R> M) {os << "{ "; for(auto m:M) os<<"("<<m.first<<":"<<m.second<<") "; return os<<"}";}
-namespace tricks{
-  template<typename T> void remdup(vector<T>& v) {sort(all(v)); v.erase(unique(all(v)), v.end());}
-    template<typename T> typename vector<T>::iterator find(vector<T>& v, const T& x) {
-        auto it = lower_bound(all(v), x); return it != v.end() && *it == x ? it : v.end();
-    }
-    template<typename T> size_t index(vector<T>& v, const T& x) { //0-based
-        auto it = find(v, x); assert(it != v.end() && *it == x); return it - v.begin();
-    }
-} using namespace tricks;
+template<typename T> void remdup(vector<T>& v) {sort(all(v)); v.erase(unique(all(v)), v.end());}
    
 #ifdef np
 #define trace(...) cout<<"Line:"<<__LINE__<<" "; __f(#__VA_ARGS__, __VA_ARGS__)
