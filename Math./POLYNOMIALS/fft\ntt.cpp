@@ -40,7 +40,7 @@ void fft (vector<base> & a, bool invert) {
         for (; j>=bit; bit>>=1)
             j -= bit;
         j += bit;
-        if (i < j)
+        if (i < j) //
             swap (a[i], a[j]);
     }
     for (int len=2; len<=n; len<<=1) {
