@@ -1,4 +1,6 @@
 // polymul mod
+//http://neerc.ifmo.ru/trains/toulouse/2017/fft2.pdf
+//fft template : https://codeforces.com/contest/993/submission/39317957
 struct base{
     ld x,y;
     base(){x=y=0;}
@@ -97,7 +99,7 @@ void mul(vll a, vll b, int mod) {
     return a;
 }
 // WITHOUT MOD
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 typedef long double Num;
 typedef complex<Num> Complex;
 void fft(Complex P[], int n, int oper) {
@@ -122,7 +124,7 @@ void fft(Complex P[], int n, int oper) {
 vector<int> mul(const vector<int> &a, const vector<int> &b) {
   vector<int> ret(max(0, (int) a.size() + (int) b.size() - 1), 0);
   int len = 1; while (len < (int)ret.size()) len <<= 1;
-  static Complex A[100000], B[100000], C[100000];
+  static Complex A[1000000], B[1000000], C[1000000]; // adjust accordingly
   for (int i = 0; i < len; i++) A[i] = i < (int)a.size() ? a[i] : 0;
   for (int i = 0; i < len; i++) B[i] = i < (int)b.size() ? b[i] : 0;
   fft(A, len, 1); fft(B, len, 1);
@@ -131,8 +133,8 @@ vector<int> mul(const vector<int> &a, const vector<int> &b) {
   return ret;
 }
 
-
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // NTT
 
@@ -189,3 +191,5 @@ namespace FFT {
 	}
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
