@@ -102,6 +102,7 @@ void mul(vll a, vll b, int mod) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 typedef long double Num;
 typedef complex<Num> Complex;
+double PI = 2.0*acos(0.0);
 void fft(Complex P[], int n, int oper) {
   for (int i = 1, j = 0; i < n - 1; i++) {
     for (int s = n; j ^= s >>= 1, ~j & s;);
@@ -109,7 +110,7 @@ void fft(Complex P[], int n, int oper) {
   }
   for (int d = 0; (1 << d) < n; d++) {
     int m = 1 << d, m2 = m * 2;
-    Complex unit_p0(cos(-2*M_PI/m2*oper), sin(-2*M_PI/m2*oper));
+    Complex unit_p0(cos(-2*PI/m2*oper), sin(-2*PI/m2*oper));
     for (int i = 0; i < n; i += m2) {
       Complex unit(1);
       for (int j = 0; j < m; j++) {
