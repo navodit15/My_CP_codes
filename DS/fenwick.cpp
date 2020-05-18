@@ -1,4 +1,4 @@
- 
+//https://codeforces.com/contest/1354/submission/80591717
 template<typename T>
 struct fenwick_tree {
     int tree_n = 0;
@@ -96,5 +96,14 @@ struct fenwick_tree {
             }
  
         return prefix;
+    }
+    void print() {
+		int size = tree_n;
+        cout << "Internal container representation (size = " << size << "):\n";
+        for (int i = 0; i < size; i++) cout << tree[i] << " ";
+        cout << "\nValues of the entries:\n";
+        for (int i = 0; i < size; i++) cout << get(i) << " ";
+        cout << "\n";
+        cout.flush();
     }
 };
