@@ -94,7 +94,7 @@ void mul_big_mod(vll &a, vll & b, ll mod){
     }
 }
 
-void mul(vll a, vll b, int mod) {
+vll mul(vll a, vll b, int mod) {
     mul_big_mod(a, b, mod);
     return a;
 }
