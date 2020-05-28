@@ -1,4 +1,4 @@
-//https://codeforces.com/contest/1354/submission/80591717
+
 template<typename T>
 struct fenwick_tree {
     int tree_n = 0;
@@ -82,7 +82,7 @@ struct fenwick_tree {
     // update(index, -1) is equivalent to erase(index); again, be careful not to double erase.
     // get(index) provides whether index is present or not.
     // query(index) provides the count of elements < index.
-    // find_last_prefix(k) finds the k-th smallest element (0-indexed).
+    // find_last_prefix(k) finds the k-th smallest element (0-indexed). O(log n )	
     int find_last_prefix(T sum) const {
         if (sum < 0)
             return -1;
