@@ -2,7 +2,7 @@
 using namespace std;
 #pragma GCC optimize("O3")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,tune=native")
-#pragma GCC optimize("unroll-loops")
+#pragma GCC optimize("unroll-loops") 
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp> 
 #define int long long
@@ -16,7 +16,7 @@ using namespace std;
 #define fst first
 #define snd second
 using namespace __gnu_pbds;
-using ordered_set = tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update>;  
+using ordered_set = tree<int, null_type,less<int>, rb_tree_tag,tree_order_statistics_node_update>;
 template<typename T> T gcd(T a, T b){return(b?__gcd(a,b):a);}
 template<typename T> T lcm(T a, T b){return(a*(b/gcd(a,b)));}
 typedef long long ll;typedef pair<int, int> pii;typedef vector<int> vi;typedef long double ld;
@@ -25,7 +25,6 @@ template<class T> ostream& operator<<(ostream &os, set<T> S){os << "{ "; for(aut
 template<class L, class R> ostream& operator<<(ostream &os, pair<L,R> P) {return os << "(" << P.first << "," << P.second << ")";}
 template<class L, class R> ostream& operator<<(ostream &os, map<L,R> M) {os << "{ "; for(auto m:M) os<<"("<<m.first<<":"<<m.second<<") "; return os<<"}";}
 template<typename T> void remdup(vector<T>& v) {sort(all(v)); v.erase(unique(all(v)), v.end());}
-   
 #ifdef np
 #define trace(...) cout<<"Line:"<<__LINE__<<" "; __f(#__VA_ARGS__, __VA_ARGS__)
 template<typename Arg1>void __f(const char *name, Arg1 &&arg1) { cout<<name<<" : "<<arg1<<endl;}
@@ -53,7 +52,16 @@ inline ll powr(ll a , ll b){
 }
 inline ll inv(ll a){ return powr(a,MOD-2); }
 
-
+void setIn(string s) { freopen(s.c_str(),"r",stdin); }
+void setOut(string s) { freopen(s.c_str(),"w",stdout); }
+void unsyncIO() { ios_base::sync_with_stdio(0); cin.tie(0); }
+void setIO(string s = "") {
+	unsyncIO();
+	cin.exceptions(cin.failbit); 
+	// throws exception when do smth illegal
+	// ex. try to read letter into int
+	if (sz(s)) { setIn(s+".in"), setOut(s+".out"); } // for USACO
+}
 
 
 
@@ -61,15 +69,11 @@ inline ll inv(ll a){ return powr(a,MOD-2); }
 
 
 void solve(){
-	
+
 }
 
-
 signed main() {
-    cin.sync_with_stdio(0); cin.tie(0);
-    cin.exceptions(cin.failbit);
-	
-
+	setIO();
 	int tt =1 ;
 	// cin >> tt;
 	rep(i,0,tt) solve();
@@ -77,10 +81,8 @@ signed main() {
 
 
 
-
-
 #ifdef np
-    cerr <<endl<<endl<< "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " s.\n";
-#endif  
- return 0; 
- }
+	cout <<endl<<endl<< "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " s.\n";
+#endif
+	return 0;
+}
