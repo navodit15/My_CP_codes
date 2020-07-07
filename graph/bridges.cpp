@@ -1,6 +1,7 @@
 //https://codeforces.com/blog/entry/68138
 // usage : https://codeforces.com/contest/118/submission/86184466
-
+// https://pastebin.com/ATwq4mJa
+// low implementation : https://pastebin.com/7MWuxdLQ
 int lvl[N+1];
 int dp[N+1];
 vector<pii> ans ;
