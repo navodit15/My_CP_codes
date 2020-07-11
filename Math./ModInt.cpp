@@ -1,5 +1,5 @@
 // ref : https://codeforces.com/blog/entry/63903
-// Verification : 
+// Verification : https://codeforces.com/contest/1248/submission/86484042
 // comment define int long long
 
 const int MODO = 998244353; 
@@ -58,6 +58,20 @@ public:
  
 using mi = modnum<998244353>;
  
-typedef vector<mi> vmi;
-typedef pair<mi,mi> pmi;
-typedef vector<pmi> vpmi;
+
+vector<mi> fact;
+vector<mi> ifact;
+ 
+void init(){
+	int N = 1100000; // set
+	fact = {1};
+	for(int i = 1; i < N; i++) fact.push_back(i * fact[i-1]);
+	ifact.resize(N);
+	ifact.back() = 1 / fact.back();
+	for(int i = N - 1; i > 0; i--) ifact[i-1] = i * ifact[i];
+}
+ 
+mi ncr(int n, int k){
+	if(k < 0 || k > n) return 0;
+	return fact[n] * ifact[k] * ifact[n-k];
+}
