@@ -1,7 +1,7 @@
 // polymul mod
 //ref : http://neerc.ifmo.ru/trains/toulouse/2017/fft2.pdf
 //fft template : https://codeforces.com/contest/993/submission/39317957
-//Verification : 
+//Verification :https://www.codechef.com/viewsolution/35622406 
 using vll = vector<ll> ;
 struct base{
     ld x,y;
@@ -115,8 +115,4 @@ void multiply(const vector <int> & a, const vector <int> & b,vector<int> &res) {
     for (size_t i = 0; i < n; ++i)
         res[i] = (int) (fa[i].real() + 0.5);
 }
- 
-vi mul(vi a , vi b, vi res){
-	multiply(a,b,res);
-	return res;
-}
+
