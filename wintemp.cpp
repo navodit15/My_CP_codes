@@ -18,6 +18,8 @@ using namespace __gnu_pbds;
 using ordered_set =
  tree<int, null_type,less<int>,
  rb_tree_tag,tree_order_statistics_node_update>;
+//find_by_order(k):returns iterator to kth element starting from 0
+//order_of_key(k):returns count of elements strictly smaller than k
 template<class T>
 using min_heap = priority_queue<T,vector<T>,greater<T>>; 
 template<typename T> T gcd(T a, T b){return(b?__gcd(a,b):a);}
