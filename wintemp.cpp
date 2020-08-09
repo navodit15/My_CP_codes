@@ -20,12 +20,12 @@ using ordered_set =
  rb_tree_tag,tree_order_statistics_node_update>;
 //find_by_order(k):returns iterator to kth element starting from 0
 //order_of_key(k):returns count of elements strictly smaller than k
+typedef long long ll;typedef pair<int, int> pii;
+typedef vector<int> vi;typedef long double ld;
 template<class T>
 using min_heap = priority_queue<T,vector<T>,greater<T>>; 
 template<typename T> T gcd(T a, T b){return(b?__gcd(a,b):a);}
 template<typename T> T lcm(T a, T b){return(a*(b/gcd(a,b)));}
-typedef long long ll;typedef pair<int, int> pii;
-typedef vector<int> vi;typedef long double ld;
 template<typename T> 
 void remdup(vector<T>& v) {
 	sort(all(v)); v.erase(unique(all(v)), v.end());
@@ -37,7 +37,6 @@ void unsyncIO() { ios_base::sync_with_stdio(0); cin.tie(0); }
 #else
 #define trace(...)
 #endif
-/* ******************* TOO WEAK TOO SLOW ********************* */
 
 #define MOD 1000000007  
 
