@@ -1,4 +1,5 @@
 //ref - https://en.wikipedia.org/wiki/Stirling_numbers_of_the_second_kind
+//ref - https://codeforces.com/blog/entry/48603?#comment-326879
 // Verification - https://codeforces.com/contest/961/submission/90281862
 
 template<unsigned P> struct ModInt {
