@@ -1,4 +1,3 @@
-#pragma region macros {
 #include <bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize("unroll-loops") 
@@ -25,14 +24,12 @@ typedef vector<int> vi;typedef long double ld;
 typedef vector<pii> vpii;
 template<class T>
 using min_heap = priority_queue<T,vector<T>,greater<T>>; 
-template<typename T> T gcd(T a, T b){return(b?__gcd(a,b):a);}
-template<typename T> T lcm(T a, T b){return(a*(b/gcd(a,b)));}
 template<class T> void re(T& x) { cin >> x; }
 template<class T> inline bool chmax(T& a,T b){if(a<b){a=b;return 1;}return 0;}
 template<class T> inline bool chmin(T& a,T b){if(a>b){a=b;return 1;}return 0;}
 #define lb(c, x) distance((c).begin(), lower_bound(all(c), (x)))
 #define ub(c, x) distance((c).begin(), upper_bound(all(c), (x)))
-#define rint(...) int __VA_ARGS__; re(__VA_ARGS__)
+#define reint(...) int __VA_ARGS__; re(__VA_ARGS__)
 #define rstring(...) string __VA_ARGS__ ; re(__VA_ARGS__)
 template<typename T> 
 void remdup(vector<T>& v) {												
@@ -42,13 +39,10 @@ template<typename T> void re(vector<T> &v) {trav(i,v) cin >> i;}
 template<class H, class... T> void re(H& h, T&... t) { re(h); re(t...); }
 void unsyncIO() { ios_base::sync_with_stdio(0); cin.tie(0); }
 #ifdef np
-#include "/home/wjex/cp/pr.h"
+#include "/home/wjex/pr.h"
 #else
 #define trace(...)
 #endif
-
-#pragma endregion }
-
 
 
 constexpr int MOD = 1000000007;
