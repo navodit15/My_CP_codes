@@ -33,3 +33,11 @@ template<int SZ> struct LCA {
 	int dist(int u, int v) { // # edges on path
 		return depth[u]+depth[v]-2*depth[lca(u,v)]; }
 };
+
+
+
+
+/*
+LCA<Nx> G;
+G.init(); can add timers to dfs incase 
+*/
