@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 #pragma GCC optimize("unroll-loops") 
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp> 
@@ -19,10 +20,12 @@ using ordered_set =
  rb_tree_tag,tree_order_statistics_node_update>;
 //find_by_order(k):returns iterator to kth element starting from 0
 //order_of_key(k):returns count of elements strictly smaller than k
+
 typedef long long ll;typedef pair<int, int> pii;
 typedef vector<int> vi;typedef long double ld;
 typedef vector<pii> vpii;
 template<class T>
+
 using min_heap = priority_queue<T,vector<T>,greater<T>>; 
 template<class T> void re(T& x) { cin >> x; }
 template<class T> inline bool chmax(T& a,T b){if(a<b){a=b;return 1;}return 0;}
@@ -30,7 +33,7 @@ template<class T> inline bool chmin(T& a,T b){if(a>b){a=b;return 1;}return 0;}
 #define lb(c, x) distance((c).begin(), lower_bound(all(c), (x)))
 #define ub(c, x) distance((c).begin(), upper_bound(all(c), (x)))
 #define reint(...) int __VA_ARGS__; re(__VA_ARGS__)
-#define rstring(...) string __VA_ARGS__ ; re(__VA_ARGS__)
+#define restr(...) string __VA_ARGS__ ; re(__VA_ARGS__)
 template<typename T> 
 void remdup(vector<T>& v) {												
 	sort(all(v)); v.erase(unique(all(v)), v.end());
@@ -38,6 +41,7 @@ void remdup(vector<T>& v) {
 template<typename T> void re(vector<T> &v) {trav(i,v) cin >> i;}
 template<class H, class... T> void re(H& h, T&... t) { re(h); re(t...); }
 void unsyncIO() { ios_base::sync_with_stdio(0); cin.tie(0); }
+
 #ifdef np
 #include "/home/wjex/pr.h"
 #else
@@ -45,19 +49,53 @@ void unsyncIO() { ios_base::sync_with_stdio(0); cin.tie(0); }
 #endif
 
 
-constexpr int MOD = 1000000007;
-constexpr int Nx = 1e5; // check 
-
-
-void solve(){
-	
+namespace std {
+ 
+template<class Fun>
+class y_combinator_result {
+  Fun fun_;
+public:
+  template<class T>
+  explicit y_combinator_result(T &&fun): fun_(std::forward<T>(fun)) {}
+ 
+  template<class ...Args>
+  decltype(auto) operator()(Args &&...args) {
+    return fun_(std::ref(*this), std::forward<Args>(args)...);
+  }
+};
+ 
+template<class Fun>
+decltype(auto) y_combinator(Fun &&fun) {
+  return y_combinator_result<std::decay_t<Fun>>(std::forward<Fun>(fun));
 }
+ 
+} // namespace std
+
+constexpr int MOD = 1000000007;
+constexpr int Nx = 2e5+5; // check 
+
+int powr(int a , int b){
+  int ret =1 ; 
+  while(b){
+    if(b&1)ret*=a ;
+    a*=a;
+    b>>=1;
+  } 
+  return ret ;
+}
+
+
+void solve()
+{
+
+}
+
 
 signed main() {
 	unsyncIO();
 	cout << fixed << setprecision(18) ;
 	int tt =1 ;
-	//cin >> tt;
+  //	cin >> tt;
 	rep(i,0,tt) solve();
 
 
@@ -67,4 +105,6 @@ signed main() {
 #endif
 	return 0;
 }
+
+ 
 
