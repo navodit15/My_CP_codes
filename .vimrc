@@ -1,9 +1,6 @@
 syntax on
 set number
-let mapleader=" "
-colorscheme peachpuff
 filetype detect
-syntax on
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
@@ -13,14 +10,14 @@ call plug#end()
 " maintain folds between sessions
 autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview 
-hi comment ctermfg=blue
-set background=dark
+highlight Comment ctermfg = green 
 set clipboard+=unnamedplus
 set mouse=a
-set tabstop=2
+set background=dark 
+set tabstop=4
 set autoindent
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 set smarttab
 set expandtab
 set smartcase
@@ -31,8 +28,9 @@ nnoremap <C-p> "+gP
 vnoremap <C-p> "+gP
 set backspace=indent,eol,start
 set cindent
-:imap jj <Esc>
 set showcmd
 set autowrite
 set autoread
+
+
 map <F5> :<C-U>!g++ -O2 -DLOCAL -std=c++17 -Wall -Wextra -Dnp -static %:r.cpp -o %:r<CR>
