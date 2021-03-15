@@ -10,9 +10,11 @@ struct DSU {
 		e[x] += e[y]; e[y] = x; return 1;
 	}
 };
-/**template<class T> T kruskal(int n, vector<pair<T,pii>> ed) {
+
+template<class T> T kruskal(int N, vector<pair<T,pii>> ed) {
 	sort(all(ed));
-	T ans = 0; DSU D; D.init(n+1); // edges that unite are in MST
-	trav(a,ed) if (D.unite(a.s.f,a.s.s)) ans += a.f; 
+	T ans = 0; DSU D; D.init(N+1); // edges that unite are in MST
+	trav(a,ed) if (D.unite(a.snd.fst,a.snd.snd)) ans += a.fst;
 	return ans;
-}*/
+ 
+}
