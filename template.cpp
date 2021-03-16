@@ -25,7 +25,6 @@ typedef long long ll;typedef pair<int, int> pii;
 typedef vector<int> vi;typedef long double ld;
 typedef vector<pii> vpii;
 template<class T>
-
 using min_heap = priority_queue<T,vector<T>,greater<T>>; 
 template<class T> void re(T& x) { cin >> x; }
 template<class T> inline bool chmax(T& a,T b){if(a<b){a=b;return 1;}return 0;}
