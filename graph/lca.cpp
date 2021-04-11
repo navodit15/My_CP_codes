@@ -1,8 +1,8 @@
-
+#define MAXN 100005
 #define MAXLG 18
 int tab[MAXLG][MAXN];
 int lvl[MAXN];
- 
+vi adj[MAXN];
 void dfs0(int n, int p) {
 	lvl[n] = lvl[p] + 1;
 	tab[0][n] = p;
