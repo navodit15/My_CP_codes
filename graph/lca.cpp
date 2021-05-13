@@ -26,17 +26,16 @@ int lca(int u, int v) {
 	return u == v ? u : tab[0][u];
 }
 
-int anc(int v ,int k){ // kth anc of v
-    if(k>=lvl[v]) return 0 ; 
-    int ret = v ;
-    for(int i = MAXLG - 1 ; i>=0 ; i--){
-        if((1ll<<i) <= k) {
-            k-=(1ll<<i);
-            ret = tab[ret][i];
-        }
-    } 
-    return ret ;
-}  
+int anc(int x, int k){ // k-th anc of x
+	int dis = lvl[x] - k;
+	for (int i = MAXLG; i >= 0; i--){
+		if(dis >= (1<<i)){
+			dis -= (1<<i);
+			x = tab[x][i];
+		}
+	}
+	return x;
+}
 
 int dist(int u, int v) {
 	return lvl[u] + lvl[v] - 2 * lvl[lca(u, v)];
