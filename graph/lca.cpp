@@ -31,7 +31,7 @@ int lca(int u, int v) {
 int anc(int x, int k){ // k-th anc of x
 	for (int i = MAXLG-1; i >= 0; i--){
 		if(k&(1<<i)){
-			x = tab[x][i];
+			x = tab[i][x];
 		}
 	}
 	return x;
