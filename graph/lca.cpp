@@ -2,14 +2,17 @@
 #define MAXLG 18
 int tab[MAXLG][MAXN];
 int lvl[MAXN];
+int st[MAXN];
 vi adj[MAXN];
 void dfs0(int n, int p) {
 	lvl[n] = lvl[p] + 1;
 	tab[0][n] = p;
+	st[n]=1;
 	for (int i = 0; i < MAXLG - 1; i++)
 		tab[i + 1][n] = tab[i][tab[i][n]];
 	for (int v : adj[n]) if (v != p) {
 		dfs0(v, n);
+		st[n]+=st[v];
 	}
 }
  
@@ -25,19 +28,14 @@ int lca(int u, int v) {
 	}
 	return u == v ? u : tab[0][u];
 }
-
 int anc(int x, int k){ // k-th anc of x
-	int dis = lvl[x] - k;
-	for (int i = MAXLG; i >= 0; i--){
-		if(dis >= (1<<i)){
-			dis -= (1<<i);
+	for (int i = MAXLG-1; i >= 0; i--){
+		if(k&(1<<i)){
 			x = tab[x][i];
 		}
 	}
 	return x;
 }
-
 int dist(int u, int v) {
 	return lvl[u] + lvl[v] - 2 * lvl[lca(u, v)];
 }
- 
