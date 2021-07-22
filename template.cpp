@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 #pragma GCC optimize("unroll-loops") 
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp> 
@@ -47,43 +46,39 @@ void unsyncIO() { ios_base::sync_with_stdio(0); cin.tie(0); }
 #define trace(...)
 #endif
 
-
-
-
 constexpr int MOD = 1000000007;
-constexpr int Nx = 2e5+5; // check 
+constexpr int MOD2 = 998244353;
+constexpr int N = 1e5+76; // check
+const int MX = 1e6+600;
 
-int powr(int a , int b){
-  int ret =1 ; 
-  while(b){
-    if(b&1)ret*=a ;
-    a*=a;
-    b>>=1;
-  } 
-  return ret ;
+int arr[MX+1];
+vi adj[MX+1];
+void pre(){}
+void ae (int a, int b,bool dir=0, bool ob=0){
+    if(ob) a--,b--;
+    adj[a].pb(b);
+    if(!dir) adj[b].pb(a);
 }
 
-
 void solve()
-{
-
+{   
 }
 
 
 signed main() {
-	unsyncIO();
-	cout << fixed << setprecision(18) ;
-	int tt =1 ;
-  //	cin >> tt;
-	rep(i,0,tt) solve();
-
-
-
+    unsyncIO();
+    cout << fixed << setprecision(18) ; int tt =1 ;
+    //cin >> tt;
+    //init(); 
+    pre(); 
+    rep(i,1,tt+1) { // cout<<"Case #"<<i<<": "; 
+        solve();
+    }
 #ifdef np
 	cout <<endl<<endl<< "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " s.\n";
 #endif
 	return 0;
 }
 
- 
+
 
