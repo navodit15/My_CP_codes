@@ -13,6 +13,8 @@ using namespace std;
 #define pb push_back
 #define fst first
 #define snd second
+mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+#define uid(a, b) uniform_int_distribution<int>(a, b)(rng)
 using namespace __gnu_pbds;
 using ordered_set =
  tree<int, null_type,less<int>,
